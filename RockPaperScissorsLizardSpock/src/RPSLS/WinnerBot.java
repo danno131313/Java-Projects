@@ -1,14 +1,11 @@
 package RPSLS;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 
 public class WinnerBot implements Player{
 	ArrayList<Play> recentPlays = new ArrayList<>();
 	ArrayList<Play> allPlays = new ArrayList<>();
-	
 	
 	@Override
 	public Play shoot() {
@@ -20,7 +17,7 @@ public class WinnerBot implements Player{
 			Play lastPlay = recentPlays.get(0);
 			int count = 0;
 			for (int i = 0; i < 2; i++) {
-				if (recentPlays.get(i) == lastPlay) {
+				if (recentPlays.get(recentPlays.size() - 1 - i) == lastPlay) {
 					count++;
 				}
 			}
